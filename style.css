@@ -1,0 +1,71 @@
+body
+{
+    background-color: #727d91;
+}
+
+.container-fluid
+{ 
+    text-align: center;
+    font-family: sans-serif;
+    border:solid;
+    padding:5px;
+}
+
+.row
+{
+    padding-left: 20px;
+    display: flex;
+    width: 100%;
+    text-align: center;   
+}
+
+.jumbotron
+{
+    background-color: cornflowerblue;
+}
+
+#result
+{
+    text-align:center;
+    font-family: sans-serif;
+    padding:2px;
+}
+
+#result1
+{
+    text-align:center;
+    font-family: sans-serif;
+    padding:2px;
+}
+
+#result1
+{
+    text-align:center;
+    font-family: sans-serif;
+    padding:2px;
+}
+
+#result2
+{
+    text-align:center;
+    font-family: sans-serif;
+    padding:2px;
+}
+
+#change
+{
+    background-color: white;
+    text-align:center;
+    font-weight: 20;
+    font-family: sans-serif; 
+}
+
+#toCurrencyCodeInput
+{
+    text-align: center;
+}
+
+#currencyQtyInput
+{
+    text-align: center;
+}
