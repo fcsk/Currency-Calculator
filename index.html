@@ -22,7 +22,45 @@
     <script src="jquery-ui.js"></script>
     <script src="main.js"></script>
 </head>
+<script>
+    $(document).ready(function()
+    {
+            json = "http://api.nbp.pl/api/exchangerates/tables/c/?format=json"
+        $.getJSON(json,function(walut)
+        {
+           
+            for (var i = 0; i < 13; i++)
+            {
+                var nameCurr = document.createTextNode(walut[0].rates[i].currency);
+                var codCurr = document.createTextNode(walut[0].rates[i].code);
+                var bidCurr = document.createTextNode(walut[0].rates[i].bid + " zł");
+                var askCurr = document.createTextNode(walut[0].rates[i].ask + " zł");
 
+                var tdnameCurr = document.createElement("td");
+                var tdcodCurr = document.createElement("td");
+                var tdbidCurr = document.createElement("td");
+                var tdaskCurr = document.createElement("td");
+
+                tdnameCurr.appendChild(nameCurr);
+                tdcodCurr.appendChild(codCurr);
+                tdbidCurr.appendChild(bidCurr);
+                tdaskCurr.appendChild(askCurr);
+
+                var tr = document.createElement("tr");
+
+                tr.appendChild(tdnameCurr);
+                tr.appendChild(tdcodCurr);
+                tr.appendChild(tdbidCurr);
+                tr.appendChild(tdaskCurr);
+
+                var table = document.getElementById("table");
+                table.appendChild(tr);
+            }
+            
+
+        });
+    });
+</script>
 <body class="p-3 mb-2 bg-dark text-white">
 
 
@@ -89,10 +127,30 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 d-xs-12">
                 <div id="result"></div>
+
                 
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 d-xs-12">
+                        <br>
+                        <table id="table" class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Waluta</th>
+                                    <th scope="col">kod</th>
+                                    <th scope="col">Sprzedaż</th>
+                                    <th scope="col">Kupno</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                
+                            </tbody>
+                
+                        </table>
+                    </div>
+                        
 
             </div>
-
+                
 
         </div>
 
